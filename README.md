@@ -123,7 +123,7 @@ NO! VScode = 텍스트 에디터(익스텐션을 추가해서 마치 IDE처럼 �
 ### GIT과 GITHUB 연결 : git remote
 * git remote add origin(별칭) github링크(url) : url repository에 별칭 부여
 * git remote -v : 별칭 확인
-* git push origin +master : 푸시시
+* git push origin +master : 푸시
 * git remote rm origin(별칭) : 별칭 삭제
 ### clone과 pull의 차이가 뭘까?
 * clone : 내가 새로운 환경에서 처음 다운로드
