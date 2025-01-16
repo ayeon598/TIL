@@ -107,7 +107,7 @@ NO! VScode = 텍스트 에디터(익스텐션을 추가해서 마치 IDE처럼 �
 * git config --global user.email "이메일"
 * git push 이후 자리 옮겼을 때 제어판의 windows 자격 증명 -> 일반 자격 증명에서 github 삭제
 * git commit -m "메시지명" : repository에 올리기
-* git log : repository 작업 파일 확인(커밋 되어 있는지 확인)
+* git log : repository 작업 파일 확인(커밋 되어 있는지 확인) - q 입력하면 나올 수 있다.
 ### git의 3가지 영역(책 71p~)
 1. Working Directory
    * git add . : Working Directory -> Staging Area (Staging Area에 올리기), 변경사항이 생길 때만 add가 됨.
@@ -120,6 +120,7 @@ NO! VScode = 텍스트 에디터(익스텐션을 추가해서 마치 IDE처럼 �
 ## 2025.01.16
 ### GIT Bash
 * shift + insert : 붙여넣기
+* Ctrl + shift + c : bash 안에서 복사하기
 ### GIT과 GITHUB 연결 : git remote
 * git remote add origin(별칭) github링크(url) : url repository에 별칭 부여
 * git remote -v : 별칭 확인
@@ -139,4 +140,28 @@ NO! VScode = 텍스트 에디터(익스텐션을 추가해서 마치 IDE처럼 �
 * gitignore 파일 생성 -> add 하지 않을 파일명이나 디렉토리명 작성, 저장
 ### git push 이후 자리 옮겼을 때 제어판의 windows 자격 증명
 * 일반 자격 증명 에서 github 삭제하기
+---
+## git 심화
+### git commit 메시지 수정하기
+* git commit 까지 완료한 후에 : git commit --amend (vim 접속됨)
+* vim에서 esc :q! 입력 : 강제 종료(저장 안 됨), esc :wq 입력 : 강제 저장 후 종료
+### commit을 새로 생성하지 않고 전체 수정하기
+* git add. -> git commit --amend : 메시지, 날짜, 파일(vim 수정) 저장
+### git revert
+* 특정 commit을 없었던 일로 만듦
+   1. git log --oneline : 해시값(메시지 앞에 있는 문자들-노란색) 확인
+   2. git revert 해시값
+### git reset
+* 특정 commit으로 되돌리기
+   1. git log --oneline : 해시값(메시지 앞에 있는 문자들-노란색) 확인
+   2. git reset --hard 해시값
+### git reflog
+* 이때까지 한 전체 commit을 모두 확인 가능(과거 commit 기록)
+  * git reflog
+### git add 취소하기
+* staging area에 있는 작업을 working directory로 옮기기
+   1. 이전에 했던 commit이 없는 경우
+      * git rm --cached 파일명
+   2. 이전에 했던 commit이 있는 경우
+      * git restore --staged 파일명
 ---
