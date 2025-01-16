@@ -1,4 +1,4 @@
-# TIL(Today I Learned)
+# SSAFY_STARTCAMP
 ## 2025.01.15
 ### ordered 리스트
 1. 1번
@@ -121,9 +121,10 @@ NO! VScode = 텍스트 에디터(익스텐션을 추가해서 마치 IDE처럼 �
 ### GIT Bash
 * shift + insert : 붙여넣기
 ### GIT과 GITHUB 연결 : git remote
-* git remote add origin(별칭) github링크(url)
-* git remote -v
-* git push origin +master
+* git remote add origin(별칭) github링크(url) : url repository에 별칭 부여
+* git remote -v : 별칭 확인
+* git push origin +master : 푸시시
+* git remote rm origin(별칭) : 별칭 삭제
 ### clone과 pull의 차이가 뭘까?
 * clone : 내가 새로운 환경에서 처음 다운로드
    * git clone github링크(url)    
@@ -132,3 +133,9 @@ NO! VScode = 텍스트 에디터(익스텐션을 추가해서 마치 IDE처럼 �
 ### git ignore
 * .gitignore 파일 생성
 * .gitignore에 올리고 싶지 않은 파일 이름들을 써주면 됨.
+### .gitignore 파일을 왜 만들까?
+* 용량이 크거나, 보안상 문제가 있거나 청구결제 관련된 api_key 같은 파일을
+  add 하지 않기 위해(staging area에 올리지 않기 위해)
+* gitignore 파일 생성 -> add 하지 않을 파일명이나 디렉토리명 작성, 저장
+### git push 이후 자리 옮겼을 때 제어판의 windows 자격 증명
+* 일반 자격 증명 에서 github 삭제하기
