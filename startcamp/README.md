@@ -100,6 +100,7 @@ NO! VScode = 텍스트 에디터(익스텐션을 추가해서 마치 IDE처럼 �
 * git : 로컬저장소 - 내 컴퓨터에서 파일을 관리하는 것
 * GIT -> GITHUB : push
 * GIT <- GITHUB : pull
+![이미지](./image.png)
 * git bash에서 git init 하면 master라고 뜸. 이 때 github branch 이름이랑 같아야 함.
 * git init : git 시작(git 폴더 생성)
 * rm -rf.git : .git 폴더 삭제
@@ -165,3 +166,39 @@ NO! VScode = 텍스트 에디터(익스텐션을 추가해서 마치 IDE처럼 �
    2. 이전에 했던 commit이 있는 경우
       * git restore --staged 파일명
 ---
+## 2025.01.17
+### ChatGPT
+* Generative Pre-trained Transformer
+### 클라이언트, 서버
+* 클라이언트
+   * 기본 구성 요소 : HTML, CSS, Javascript
+* 서버(gpt sever)
+* 클라이언트 -> 서버 (요청)
+* 서버 -> 클라이어 (응답)
+### ex) 네이버 로그인 페이지 구성
+* html
+   * Naver라는 글자, ID/전화번호라는 글자, 네모칸 틀, 로그인 버튼
+* css
+   * 예쁘게 정렬, 색깔, 언어설정(다양한 언어가 나오게)
+* javascript(js)
+   * 로그인이 될 수 있게 하는 로직(조건문)
+   * 비밀번호가 틀렸을 경우 비밀번호를 다시 입력해주세요
+   * 언어를 바꿨을 때 다른 언어로 바뀌게
+### API
+* 두 시스템이 통신할 수 있게 하는 수단, 눈에 보이지 않는 인터페이스 역할
+* 주의사항
+   * 공개된 곳에 노출하지 말 것
+   * 키가 유출될 경우 무단 사용 위험 -> 정기 갱신 필요
+### 관통프로젝트 예시
+* 날씨 데이터를 api key를 이용해서 받아와라.
+   * problem.py -> 날씨 데이터 url (요청)
+   * 요청을 보내고, 응답을 받을 수 있게하는 수단? api interface(기상청 사이트의 api key)
+### GPT API를 활용한 생성형 AI 만들기
+* 서버 : Chat gpt 3.5 turbo, DB : gpt database
+* 과정
+   1. 클라이언트에서 서버로 gpt api key를 통해 요청을 보냄
+   2. 서버에서 DB로 query를 통해 요청을 보냄
+   3. DB에서 서버로 response를 보냄
+   4. 서버에서 클라이언트로 response를 보냄
+![이미지](./image.jpg)
+* ssafy_startcamp repository 참고
