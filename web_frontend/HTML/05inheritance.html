@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .parent {
+        /* color는 상속이 된다 */
+        color: red;
+        /* border는 상속이 안 된다 */
+        border: 1px solid black;
+    }
+
+    /* 대부분 시각적인 속성(글꼴, 색상, 텍스 관련 속성)은 상속된다
+    박스모델속성(너비, 높이, 테두리, 여백(마진 패딩))은 일반적으로 상속되지 않는다 */
+
+    /* 공통점 : 여백
+    border 기준으로 밖에 있으면 margin - 상속 안됨
+    border 기준으로 안에 있으면 padding - 상속 안됨*/
+
+</style>
+<body>
+    <!-- ul.parent>li.child*2 -->
+    <ul class="parent">
+        <li class="child"></li>
+        <li class="child"></li>
+    </ul>
+</body>
+</html>
