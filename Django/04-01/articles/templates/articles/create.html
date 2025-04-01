@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>New</h1>
+
+{% comment %} enctype = 'multipart/form-data' : 폼 데이터와 함께 파일(이미지, zip파일...)도 서버에 전송 {% endcomment %}
+<form action="{% url 'articles:create' %}" method = 'POST' enctype = 'multipart/form-data'>
+    {% csrf_token %}
+    {{form.as_p}}
+        
+    <input type="submit">
+</form>
+
+<hr>
+{% comment %} HOME 버튼 {% endcomment %}
+<a href="{% url "articles:index" %}">HOME</a>
+
+{% endblock content %}
