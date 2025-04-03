@@ -1,6 +1,6 @@
 from django.urls import path
 
-# . : 현재 디렉토리
+# . : 현재 디렉토리리
 from . import views
 
 # {% url namespace:name %}
