@@ -1,13 +1,17 @@
+import heapq
+
 N = int(input())
-arr = [int(input()) for _ in range(N)]
-num = 0
+arr = []
 sum_num = 0
+
+for _ in range(N):
+    heapq.heappush(arr, int(input()))
+
 while len(arr) > 1:
-    num = min(arr)
-    arr.remove(min(arr))
-    num += min(arr)
-    arr.remove(min(arr))
-    arr.append(num)
+    a = heapq.heappop(arr)
+    b = heapq.heappop(arr)
+    num = a + b
     sum_num += num
-    if len(arr) == 1: break
+    heapq.heappush(arr, num)
+
 print(sum_num)
