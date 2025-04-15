@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>{{person.username}}님의 프로필</h1>
+  <hr>
+  <div>
+    {% comment %} 팔로잉 : 참조 / 팔로워 : 역참조 {% endcomment %}
+    팔로잉 : {{person.followings.all|length}} / 팔로워 : {{person.followers.all|length}} 
+  </div>
+
+  {% if request.user != person %}
+    <div>
+      {% comment %} views.py에서 person으로 받았기 때문에 person.pk를 보내야함. {% endcomment %}
+      <form action="{% url "accounts:follow" person.pk %}" method='POST'>
+        {% csrf_token %}
+        {% comment %} 팔로우 하고 있으면 언팔로우 팔로우 하고 있지 않으면 팔로우 {% endcomment %}
+        {% if request.user in person.followers.all %}
+          <input type="submit" value="언팔로우">
+        {% else %}
+          <input type="submit" value="팔로우">
+        {% endif %}
+      </form>
+    </div>
+  {% endif %}
+  <hr>
+  <h2>{{person.username}}가 작성한 게시글</h2>
+  {% comment %} person.article_set.all : 역참조 => 외래키가 artilce에 있으므로 {% endcomment %}
+  {% for article in person.article_set.all %}
+    <div>{{article.title}}</div>
+  {% endfor %}
+  <hr>
+
+  <h2>{{person.username}}가 작성한 댓글</h2>
+  {% for comment in person.comment_set.all %}
+    <div>{{comment.content}}</div>
+  {% endfor %}
+  <hr>
+
+  <h2>{{person.username}}이 좋아요한 게시글</h2>
+  {% comment %} related_name : like_articles {% endcomment %}
+  {% comment %} person.like_articles.all : 역참조 (person 입장에서 들고오면 다 역참조) {% endcomment %}
+  {% for article in person.like_articles.all %}
+    <div>{{article.title}}</div>
+  {% endfor %}
+
+{% endblock content %}
