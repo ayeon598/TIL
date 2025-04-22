@@ -1,0 +1,33 @@
+<!-- spread-syntax.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 스프레드 연산자
+    // 1. 인자 확장 (함수 호출 시) - 배열을 함수의 인자로 확장할 때
+    const myFunc = function(x, y, z) {
+      return x + y + z
+    }
+    const numbers = [1, 2, 3]
+    // ... : 스프레드 연연
+    console.log(myFunc(...numbers))
+
+    // 2. 나머지 매개변수 (함수 선언 시) - 여러 인자를 배열로 모을 때(Rest연산자)
+    // 여러 인자를 배열로 모을 때
+    const myFunc2 = function(x, y, ...restArgs) {
+      return [x, y, restArgs]
+    }
+    console.log(myFunc2(1, 2, 3, 4, 5)) // 1, 2, [3, 4, 5]
+    
+  </script>
+</body>
+
+</html>
