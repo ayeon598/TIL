@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const user = {
+      name: 'Alice',
+      'key with space': true,
+      // 객체 안에 있는 함수 : 메서드 => 호출할 때 : 객체.메서드()
+      greeting: function () {
+        return 'hello'
+      }
+    }
+
+    // python 딕셔너리에서 key:value, js 객체에서는 속성:값
+    // 조회 두가지 방법
+    // 1. 객체.속성
+    console.log(user.name)
+    // 만약 속성이 (1. 문자열 2. 특수문자 포함 3. 숫자로 시작)인 경우 객체.속성 불가능
+    // 2. 객체['속성']
+    console.log(user['key with space'])
+    // 추가
+    user.address = 'korea'
+    console.log(user.address)
+
+    // 수정
+    user.name = 'Bob'
+    console.log(user.name)
+
+    // 삭제(delete)
+    delete user.name
+    console.log(user.name) // undefined (null X)
+
+    // in 연산자 (파이썬의 멤버쉽 연산자와 비슷)
+    console.log('greeting' in user) // true
+    console.log('country' in user)  // false
+
+    // 메서드 호출
+    console.log(user.greeting())
+
+  </script>
+</body>
+
+</html>

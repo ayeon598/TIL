@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 동기 : 한 작업이 완료되어야만 다음 작업이 시작
+    // 비동기 : 작업의 완료를 기다리지 않고 그 다음 코드를 실행한다.
+    // 비동기적 측면
+    console.log('1')
+    setTimeout(() => {
+      console.log('2')
+    }, 5000)
+
+    console.log('3')
+    
+    // 출력 결과
+    // a
+    // c
+    // b
+  </script>
+</body>
+
+</html>

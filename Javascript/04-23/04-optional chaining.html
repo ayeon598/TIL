@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const user = {
+      name: 'Alice',
+      greeting: function () {
+        return 'hello'
+      }
+    }
+
+    // optional-chaining의 목적?
+    // 중첩 객체에 접근할 때 에러없이 접근하기 위해서
+    // console.log(user.address.street)  // 우리가 원하는 결과 : undefined => 실제 결과 : TypeError 발생
+
+    console.log(user.address?.street) // 결과 : undefined
+
+    // 나쁜 예
+    // 시작값에는 optional-chaining 사용하지 않는다.
+    // console.log(user?.address.street)
+  </script>
+</body>
+
+</html>
