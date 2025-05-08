@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div id="app">
+    <!-- createApp 함수에서 increment함수를 정의 -->
+    <button @click="increment"> {{count}} </button>
+  </div>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    // 1.
+    const { createApp, ref } = Vue
+
+    // 2.
+    // 1번 예제와 차이점: count, value를 증가시키는 increment 함수를 정의
+    const app = createApp({
+      setup(){
+        const count = ref(0)
+        const increment = function() {
+          count.value++
+        }
+        return {
+          count,
+          increment
+        }
+      }
+    })
+
+    // 3.
+    app.mount('#app')
+
+  </script>
+</body>
+
+</html>
